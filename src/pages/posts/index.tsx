@@ -1,11 +1,22 @@
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import styles from './styles.module.scss';
 
 import Prismic from '@prismicio/client';
-import { getPrismicClient } from '../../service/prismic';
-import { GetStaticProps } from 'next';
+import { getPrismicClient } from '../../services/prismic';
 
-export default function Posts() {
+interface Post {
+  slug: string;
+  title: string;
+  excerpt: string;
+  updatedAt: string;
+}
+
+interface PostsProps {
+  posts: Post[];
+}
+
+export default function Posts({ posts }: PostsProps) {
   return (
     <>
       <Head>
