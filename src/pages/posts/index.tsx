@@ -1,11 +1,11 @@
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import styles from './styles.module.scss';
 
 import Prismic from '@prismicio/client';
 import { RichText } from 'prismic-dom';
 
-import { getPrismicClient } from '../../service/prismic';
-import { GetStaticProps } from 'next';
+import { getPrismicClient } from '../../services/prismic';
 
 type Post = {
   slug: string;
